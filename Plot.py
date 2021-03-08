@@ -6,6 +6,7 @@ import numpy as np
 # =============================================================================
 # Graficar WD en campos de TAOS-II
 # =============================================================================
+from Crossmatch import Campos
 
 plt.scatter(ra,dec,marker='*',color='m',s=1,label='White Dwarfs')
 
