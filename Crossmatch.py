@@ -1,79 +1,60 @@
 import matplotlib.pyplot as plt
 import pandas as pd
-import sys
 import numpy as np
 
+def conditional(x_ob,y_ob,field,x_tf,y_tf):
+
+    x = []
+    y = []
+    f = []
+
+    # Diámetro de campo de visiión de TAOS-II
+    f_view = 1.7          
+    df = f_view/2
+
+    for i,ii in zip (x_ob,y_ob):
+        for j,jj,jjj in zip (x_tf,y_tf,field):        
+            #cont += 1
+            if j-df <= i <= j+df and jj-df <= ii <= jj+df:
+                #print (iii,i,ii)
+                x.append(i)
+                y.append(ii)
+                f.append(jjj)
+
+    return x,y,f
+
 # =============================================================================
-# WD en Crossmatch de GDR2
+# Extrating coordinates of objects to find
 # =============================================================================
+def crossmatch(file,type):
+    
+    objects_data = pd.read_csv(file)
 
-Tabla_GDR2 = pd.read_csv('J_MNRAS_482_4570_gaia2wd.csv', header= 0)
-"""
-RA   = Tabla_GDR2['_RAJ2000']
-DEC  = Tabla_GDR2['_DEJ2000']
-Name = Tabla_GDR2['WD']
-SDSS = Tabla_GDR2['SDSS']
-Pwd  = Tabla_GDR2['Pwd']
+    X   = objects_data[1]
+    Y  = objects_data[2]
 
-#SpC  = Tabla_GDR2['SpClass']
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+    Fields = pd.read_csv('TAOS_fields.csv', header= 0)
+    if type == 'equatorial':
 
-G_mag = Tabla_GDR2['Gmag']
-BP_mag = Tabla_GDR2['BPmag']
-RP_mag = Tabla_GDR2['RPmag']
+        RA_fields =  Fields['RA_EQ_dec'] 
+        DEC_fields =  Fields['Dec_EQ_dec']
+        Campo = Fields['Field']
 
-TeffH = Tabla_GDR2['TeffH']
-LoggH = Tabla_GDR2['loggH']
-MassH = Tabla_GDR2['MassH']
-Plx = Tabla_GDR2['Plx']
-"""
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Campos = pd.read_csv('TAOS_fields.csv', header= 0)
+        x,y,f = conditional(X,Y,Campo,RA_fields,DEC_fields)
+        Crossmatch = pd.DataFrame({"WD_name":x,"SDSS":y,"RA":f})
 
-RA_fields =  Campos['RA_EQ_dec'] 
-DEC_fields =  Campos['Dec_EQ_dec']
-Campo = Campos['Field']
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    elif type == 'galactic':
+        Lon_fields =  Fields['Gal_Lon_deg']
+        Lat_fields =  Fields['Gal_Lat_deg'] 
+        Campo = Fields['Field']
 
-ra = []
-dec = []
-name = []
-sdss = []
-pwd = []
-g = []
-bp = []
-rp = []
-massh = []
-teffh = []
-loggh = []
-plx = []
+        x,y,f = conditional(X,Y,Campo,Lon_fields,Lat_fields)
+        Crossmatch = pd.DataFrame({"WD_name":x,"SDSS":y,"RA":f})       
 
-f_view = 1.7          # Diámetro de campo de visiión de TAOS-II
-df = f_view/2
+    else:
+        break
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-cont = 1
-for i,ii,iii,i4,i5,i6,i7,i8,i9,i10,i11,i12 in zip (RA,DEC,Name,SDSS,Pwd,G_mag,BP_mag,RP_mag,TeffH,MassH,LoggH,Plx):
-    for j,jj,jjj in zip (RA_fields,DEC_fields,Campo):        
-        #cont += 1
-        if j-df <= i <= j+df and jj-df <= ii <= jj+df:
-            #print (iii,i,ii)
-            ra.append(i)
-            dec.append(ii)
-            name.append(iii)
-            sdss.append(i4)
-            pwd.append(i5)
-            g.append(i6)
-            bp.append(i7)
-            rp.append(i8)
-            massh.append(i9)
-            teffh.append(i10)
-            loggh.append(i11)
-            plx.append(i12)
-
-# sys.exit()
-Crossmatch = pd.DataFrame({"WD_name":name,"SDSS":sdss,"RA":ra, "DEC":dec,
-                           'Pwd':pwd, "G_mag":g,"BP_mag":bp,"RP_mag":rp,
-                           'TeffH':teffh,'MassH':massh,'LoggH':loggh,'Parallax':plx})
-Crossmatch_OK = Crossmatch.drop_duplicates(subset=['WD_name',"SDSS"], keep='first')
-
-# saving the dataframe 
-Crossmatch.to_csv('Crossmatch_PP_Marzo_gdr2.csv')
+    # saving the dataframe 
+    Crossmatch.to_csv('objects_in_TAOSII_fields.csv')
