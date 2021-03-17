@@ -6,8 +6,23 @@ import numpy as np
 # =============================================================================
 # Graficar WD en campos de TAOS-II
 # =============================================================================
-from Crossmatch import Campos
 
+Fields = pd.read_csv('TAOS_fields.csv', header= 0)
+
+RA_fields =  Fields['RA_EQ_dec'] 
+DEC_fields =  Fields['Dec_EQ_dec']
+Campo = Fields['Field']
+
+f_view = 1.7          # Diámetro de campo de visiión de TAOS-II
+df = f_view/2
+
+# =============================================================================
+from Crossmatch import Crossmatch
+
+ra  = Crossmatch["RA"]
+dec = Crossmatch["DEC"]
+
+# =============================================================================
 plt.scatter(ra,dec,marker='*',color='m',s=1,label='White Dwarfs')
 
 plt.errorbar(RA_fields, DEC_fields, ms=2,fmt='rs', label="data",
@@ -23,4 +38,3 @@ plt.axhline(23.45, color='g', ls="dotted")
 plt.axhline(0, color='g', ls="solid")
 plt.axhline(-23.45, color='g', ls="dotted")
 plt.show()
-"""
