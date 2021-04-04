@@ -1,4 +1,4 @@
-COTTONTAIL is a graphical interface that allow the users to view and analyse data cubes from IFU telescopes.
+COTTONTAIL is a tool aimed to help you find if your object are on the [TAOS-II's](http://taos2.astrosen.unam.mx/) fields of vision.
 
 Copyright (C) 2020 Sebastián Carrrazco, Dr. Yilen Gomez Maqueo, Dr. Margarita Pereyra
 
