@@ -23,21 +23,22 @@ def conditional(x_ob, y_ob, field, x_tf, y_tf):
     return x, y, f
 
 # =============================================================================
-# Extrating coordinates of objects to find
+# Extrating coordinates of objects to apply the conditional algorith
 # =============================================================================
 
 
-def crossmatch(file, type):
+def crossmatch(file, coor_bool):
 
     col_Names = ['RA', 'DEC']
-    objects_data = pd.read_csv(file, header=0)
+    objects_data = pd.read_csv(str(file)+'.csv', header=0)
 
     X = objects_data['RA']
     Y = objects_data['DEC']
 
     # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    Fields = pd.read_csv('TAOS_fields.csv', header=5)
-    if type == 1:    # equatorial
+    Fields = pd.read_csv('TAOS_fields.csv', header=1)
+    
+    if coor_bool == 0:    # equatorial
 
         RA_fields = Fields['RA_EQ_dec']
         DEC_fields = Fields['Dec_EQ_dec']
@@ -46,7 +47,7 @@ def crossmatch(file, type):
         x, y, f = conditional(X, Y, Campo, RA_fields, DEC_fields)
         Crossmatch = pd.DataFrame({"RA": x, "DEC": y, "Field": f})
 
-    elif type == 0:   # galactic
+    elif coor_bool == 1:   # galactic
 
         Lon_fields = Fields['Gal_Lon_deg']
         Lat_fields = Fields['Gal_Lat_deg']
