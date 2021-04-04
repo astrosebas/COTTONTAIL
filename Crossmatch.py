@@ -2,7 +2,6 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 
-
 def conditional(x_ob, y_ob, field, x_tf, y_tf):
 
     x = []
@@ -60,11 +59,8 @@ def crossmatch(file, type):
     else:
         print('ERROR: Wrong coordinates system \n Try again')
     # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    """
+    
     # saving the dataframe 
     Crossmatch.to_csv('objects_in_TAOSII_fields.csv')
-
-    if plot == 0:
-        exec(open('Plot.py').read())
-    """
+    
     return Crossmatch
