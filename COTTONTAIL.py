@@ -30,7 +30,7 @@ def conditional(x_ob, y_ob, field, x_tf, y_tf):
 def crossmatch(file, coor_bool):
 
     col_Names = ['RA', 'DEC']
-    objects_data = pd.read_csv(str(file)+'.csv', header=0)
+    objects_data = pd.read_csv(file+'.csv', header=0)
 
     X = objects_data['RA']
     Y = objects_data['DEC']
