@@ -36,7 +36,7 @@ def crossmatch(file, type):
     Y = objects_data['DEC']
 
     # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    Fields = pd.read_csv('TAOS_fields.csv', header=0)
+    Fields = pd.read_csv('TAOS_fields.csv', header=5)
     if type == 1:    # equatorial
 
         RA_fields = Fields['RA_EQ_dec']
