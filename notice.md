@@ -1,6 +1,6 @@
 COTTONTAIL is a graphical interface that allow the users to view and analyse data cubes from IFU telescopes.
 
-Copyright (C) 2020 Sebastián Carrrazco, Dr. Yilen Gomez Maqueo
+Copyright (C) 2020 Sebastián Carrrazco, Dr. Yilen Gomez Maqueo, Dr. Margarita Pereyra
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
