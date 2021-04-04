@@ -37,7 +37,7 @@ crossmatch(file,coor_bool)
 If you want to contribuite feel free to clone the repository and push your improvements.
 
 ## Credits: 
-This tools was develop by Sebastian Carrazco, advised of Dr. Yilen Gomez Maqueo, as part of his Professional practice internship at [Instituto de Astronomía UNAM](http://www.astroscu.unam.mx/IA/index.php?lang=en).
+This tools was develop by Sebastian Carrazco, advised of Dr. Yilen Gomez Maqueo, as part of his Professional practice internship at [Instituto de Astronomía UNAM](http://www.astroscu.unam.mx/IA/index.php?lang=en) under the supervision of Dr. Gomez Maqueo and Dr. Margarita Pereyra.
 
 ## License: 
 This tool has the license GNU General Public License v3.0 (GNU GPLv3).
