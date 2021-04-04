@@ -1,3 +1,7 @@
+"""
+Data took from: https://taos.asiaa.sinica.edu.tw/projects/target_fields
+Last time checked the data: April 03, 2021, at 18:40:00 (GMT: -7)
+"""
 Field,RA_EQ_hms,Dec_EQ_hms,Gal_Lon_deg,Gal_Lat_deg,RA_EQ_dec,Dec_EQ_dec
 1,22:18:00.00,-10:09:00.00,332.75421,0.39414,334.5,-10.15
 2,22:05:24.00,-10:38:56.00,329.67986,1.02487,331.35,-10.6488888888889
