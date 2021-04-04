@@ -6,9 +6,6 @@ COordinaTes crossmaTch ON TAos fIeLds
 
 COTTONTAIL is aimed to help you find if your objects are on the TAOS-II's fields of vision. It will make a crossmatch of coordinates between a list of object given and the TAOS field of vision.
 
-##  Table of Contents: 
-Optionally, include a table of contents in order to allow other people to quickly navigate especially long or detailed READMEs.
-
 ## Installation: 
 ### Before running COTTONTAIL
 In this Python tool we implement the Numpy and Pandas libraries, both provided in the anaconda enviroment. In case you haven't anaconda installed, check out Makefile, it will install the required libraries with pip install. 
