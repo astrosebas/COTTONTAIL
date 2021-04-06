@@ -8,7 +8,6 @@ COTTONTAIL is aimed to help you find if your objects are on the TAOS-II's fields
 
 ## Installation: 
 ### Before running COTTONTAIL
-In this Python tool we implement the Numpy and Pandas libraries, both provided in the anaconda enviroment. In case you haven't anaconda installed, check out Makefile, it will install the required libraries with pip install. 
 Just open the shell, get to the root directory of COTTONTAIL and type:
 
 ```console
