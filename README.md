@@ -4,7 +4,7 @@ COordinaTes crossmaTch ON TAos fIeLds
 
 ## Description: 
 
-COTTONTAIL is aimed to help you find if your objects are on the TAOS-II's fields of vision. It will make a crossmatch of coordinates between a list of object given and the TAOS field of vision.
+COTTONTAIL is aimed to help you find if your objects are on the [TAOS-II's](http://taos2.astrosen.unam.mx/) fields of vision. It will make a crossmatch of coordinates between a list of object given and the TAOS field of vision.
 
 ## Installation: 
 ### Before running COTTONTAIL
