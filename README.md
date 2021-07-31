@@ -2,11 +2,14 @@
 
 COordinaTes crossmaTch ON TAos fIeLds
 
-## Description: 
+## Description 
 
 COTTONTAIL is aimed to help you find if your objects are on the [TAOS-II's](http://taos2.astrosen.unam.mx/) fields of vision. It will make a crossmatch of coordinates between a list of object given and the TAOS field of vision.
 
-## Installation: 
+## TAOS-II fields fo vision 
+
+
+## Installation
 ### Before running COTTONTAIL
 Just open the shell, get to the root directory of COTTONTAIL and type:
 
@@ -14,7 +17,7 @@ Just open the shell, get to the root directory of COTTONTAIL and type:
 $ make
 ```
 
-## Running COTTONTAIL: 
+## Running COTTONTAIL
 If you have Linux (or bash installed on your PC) and IPython (or python3) installed, just get into the COTTONTAIL root directory and run the COTTONTAIL code as:  
 
 ```console
@@ -32,11 +35,11 @@ crossmatch(file,coor_bool)
 ```
 *Being file a kwargs without the extention .csv 
 
-## Contributing:
+## Contributing
 If you want to contribuite feel free to clone the repository and push your improvements.
 
-## Credits: 
+## Credits 
 This tools was develop by Sebastian Carrazco, advised of Dr. Yilen Gomez Maqueo, as part of his Professional practice internship at [Instituto de Astronomía UNAM](http://www.astroscu.unam.mx/IA/index.php?lang=en) under the supervision of Dr. Gomez Maqueo and Dr. Margarita Pereyra.
 
-## License: 
+## License
 This tool has the license GNU General Public License v3.0 (GNU GPLv3).
