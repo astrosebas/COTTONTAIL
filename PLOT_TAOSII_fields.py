@@ -49,7 +49,7 @@ def ecl2eq(lon_ecl, lat_ecl):
 Campos = pd.read_csv('TAOS_fields.csv', header=1)
 
 RA_fields = Campos['RA_EQ_dec']
-DEC_fields = Campos['DEC_EQ_dec)']
+DEC_fields = Campos['Dec_EQ_dec']
 Campo = Campos['Field']
 f_view = 1.7
 df = f_view/2
@@ -81,25 +81,25 @@ fig = plt.figure(figsize=(10, 5))
 ax = fig.add_subplot(111, projection='mollweide')
 
 ax.scatter(l_eq, b_eq, s=3, marker='o', alpha=0.7,
-           color='orange')  # , label='Plano galáctico')
+           color='orange', label='Galactic plane')
 # ax.plot(l_eq, b_eq, linestyle='dashed', color='orange',
 # label='Plano galáctico', linewidth=0.95)
 
 ax.scatter(lon_eq, lat_eq, s=3, marker='o', alpha=0.7,
-           color='steelblue')  # , label='Eclíptica')
+           color='steelblue', label='Ecliptic plane')
 # ax.plot(lon_eq, lat_eq, linestyle='dotted', color='steelblue',
 # label='Eclíptica', linewidth=0.95)
 
 ax.scatter(np.radians(x), np.radians(DEC_fields), s=10,
            marker='o', c='purple', alpha=0.7,
-           edgecolors='black', linewidth=0.3, zorder=1, label='Campo de TAOS')  # convert degrees to radians
+           edgecolors='black', linewidth=0.3, zorder=1, label='TAOS-II fields')  # convert degrees to radians
 
 ax.set_xticklabels(tick_labels)             # ESCALA DEL EJE X
 #ax.set_title('Campos de TAOS-II')
 ax.title.set_fontsize(10)
-ax.set_xlabel("Ascención recta [°]")
+ax.set_xlabel("Right Ascension[°]")
 ax.xaxis.label.set_fontsize(10)
-ax.set_ylabel("Declinación [°]")
+ax.set_ylabel("Declination [°]")
 ax.yaxis.label.set_fontsize(10)
 ax.grid(True)
 ax.legend(loc='best')
