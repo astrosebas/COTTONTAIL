@@ -4,10 +4,16 @@ COordinaTes crossmaTch ON TAos fIeLds
 
 ## Description 
 
-COTTONTAIL is aimed to help you find if your objects are on the [TAOS-II's](http://taos2.astrosen.unam.mx/) fields of vision. It will make a crossmatch of coordinates between a list of object given and the TAOS field of vision.
+COTTONTAIL is aimed to help you find if your objects are on the [TAOS-II's](http://taos2.astrosen.unam.mx/) fields of vision. It will make a crossmatch of coordinates between a list of object given and the TAOS-II field of vision, located in [San Pedro Martir National Astronomical Observatory](https://www.astrossp.unam.mx/index.php/en/).
+TAOS-II has the same fields of vision as the first TAOS project, bases in Taiwan.
 
 ## TAOS-II fields fo vision 
-
+The fields of vision data of TAOS-II are in the TAOS_fields.csv file. We add a program to plot the TAOS-II fields, to run the program run:
+```console
+%run PLOT_TAOSII_fields.py
+```
+and you will get a plot like this:
+![Fields](TAOSII_FIELDS.png)
 
 ## Installation
 ### Before running COTTONTAIL
