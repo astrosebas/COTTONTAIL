@@ -45,7 +45,10 @@ crossmatch(file,coor_bool)
 If you want to contribuite feel free to clone the repository and push your improvements.
 
 ## Credits 
-This tools was develop by Sebastian Carrazco, advised of Dr. Yilen Gomez Maqueo, as part of his Professional practice internship at [Instituto de Astronomía UNAM](http://www.astroscu.unam.mx/IA/index.php?lang=en) under the supervision of Dr. Gomez Maqueo and Dr. Margarita Pereyra.
+This tools was develop by Sebastian Carrazco, advised of Dr. Yilen Gomez Maqueo, as part of his Professional practice internship at [Instituto de Astronomía UNAM](http://www.astroscu.unam.mx/IA/index.php?lang=en) and **B.Sc. thesis** under the supervision of Dr. Gomez Maqueo and Dr. Margarita Pereyra.
+
+Please if you use this program for your research cite my thesis:
+* J. S. Carrazco. Estudio preliminar de los proyectos TAOS-II y DDOTI para la búsqueda de exoplanetas transitantes desde el OAN-SPM. (Universidad Autónoma de Sinaloa, Culiacán. 2021 expected)
 
 ## License
 This tool has the license GNU General Public License v3.0 (GNU GPLv3).
